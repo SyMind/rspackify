@@ -1,0 +1,28 @@
+{
+  "name": "rspackify",
+  "version": "0.0.1",
+  "description": "Seamlessly switch from Webpack to Rspack on the fly",
+  "type": "module",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^20.9.0",
+    "typescript": "^5.2.2"
+  },
+  "scripts": {
+    "build": "tsc -b ./tsconfig.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SyMind/rspackify.git"
+  },
+  "keywords": [
+    "rspack",
+    "webpack"
+  ],
+  "author": "Cong-Cong Pan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SyMind/rspackify/issues"
+  },
+  "homepage": "https://github.com/SyMind/rspackify#readme"
+}
