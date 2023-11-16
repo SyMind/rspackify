@@ -2,14 +2,18 @@
   "name": "rspackify",
   "version": "0.0.1",
   "description": "Seamlessly switch from Webpack to Rspack on the fly",
-  "type": "module",
-  "dependencies": {},
+  "dependencies": {
+    "arg": "^5.0.2"
+  },
   "devDependencies": {
     "@types/node": "^20.9.0",
     "typescript": "^5.2.2"
   },
   "scripts": {
     "build": "tsc -b ./tsconfig.json"
+  },
+  "bin": {
+    "ts-node": "dist/bin.js"
   },
   "repository": {
     "type": "git",

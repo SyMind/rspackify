@@ -2,7 +2,7 @@
 
 'use strict';
 
-const { versionGteLt } = require('../dist/util');
+const { versionGteLt } = require('../lib/util');
 
 // Test for node >14.13.1 || (>=12.20.0 && <13)
 const builtinModuleProtocol =
