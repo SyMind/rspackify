@@ -3,18 +3,19 @@
   "version": "0.0.1",
   "description": "Seamlessly switch from Webpack to Rspack on the fly",
   "dependencies": {
+    "@rspack/core": "^0.3.13",
     "arg": "^5.0.2"
   },
   "devDependencies": {
-    "@types/node": "^20.9.0",
-    "typescript": "^5.2.2"
-  },
-  "scripts": {
-    "build": "tsc -b ./tsconfig.json"
+    "@types/node": "^20.9.0"
   },
   "bin": {
-    "ts-node": "dist/bin.js"
+    "rspackify": "lib/bin.js"
   },
+  "files": [
+    "lib",
+    "dist-raw"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/SyMind/rspackify.git"
