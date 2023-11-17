@@ -4,7 +4,8 @@
   "description": "Seamlessly switch from Webpack to Rspack on the fly",
   "dependencies": {
     "@rspack/core": "^0.3.13",
-    "arg": "^5.0.2"
+    "arg": "^5.0.2",
+    "debug": "^4.3.4"
   },
   "devDependencies": {
     "@types/node": "^20.9.0"
