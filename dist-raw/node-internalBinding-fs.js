@@ -1,5 +1,5 @@
 const fs = require('fs');
-const {versionGteLt} = require('../dist/util');
+const {versionGteLt} = require('../lib/util');
 
 // In node's core, this is implemented in C
 // https://github.com/nodejs/node/blob/v15.3.0/src/node_file.cc#L891-L985

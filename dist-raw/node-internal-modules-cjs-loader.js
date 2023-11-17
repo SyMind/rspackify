@@ -35,7 +35,7 @@ const {
 const { getOptionValue } = require('./node-options');
 const preserveSymlinks = getOptionValue('--preserve-symlinks');
 const preserveSymlinksMain = getOptionValue('--preserve-symlinks-main');
-const {normalizeSlashes} = require('../dist/util');
+const {normalizeSlashes} = require('../lib/util');
 const {createErrRequireEsm} = require('./node-internal-errors');
 const {
   codes: {
