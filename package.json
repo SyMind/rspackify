@@ -5,11 +5,13 @@
   "dependencies": {
     "@rspack/core": "^0.3.14",
     "@rspack/dev-server": "^0.3.14",
+    "@rspack/plugin-html": "^0.3.14",
     "arg": "^5.0.2",
     "debug": "^4.3.4"
   },
   "devDependencies": {
     "@types/node": "^20.9.0",
+    "html-webpack-plugin": "^5.5.3",
     "webpack-dev-server": "^4.15.1"
   },
   "bin": {
