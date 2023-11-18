@@ -3,12 +3,14 @@
   "version": "0.0.1",
   "description": "Seamlessly switch from Webpack to Rspack on the fly",
   "dependencies": {
-    "@rspack/core": "^0.3.13",
+    "@rspack/core": "^0.3.14",
+    "@rspack/dev-server": "^0.3.14",
     "arg": "^5.0.2",
     "debug": "^4.3.4"
   },
   "devDependencies": {
-    "@types/node": "^20.9.0"
+    "@types/node": "^20.9.0",
+    "webpack-dev-server": "^4.15.1"
   },
   "bin": {
     "rspackify": "lib/bin.js"
