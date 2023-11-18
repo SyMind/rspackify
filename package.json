@@ -1,6 +1,6 @@
 {
   "name": "rspackify",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Seamlessly switch from Webpack to Rspack on the fly",
   "dependencies": {
     "@rspack/core": "^0.3.14",
