@@ -1,13 +1,13 @@
 {
   "compilerOptions": {
     "target": "ES2017",
-    "module": "commonjs",
+    "module": "esnext",
+    "moduleResolution": "Node",
     "lib": ["es2017", "dom"],
     "allowJs": true,
     "checkJs": true,
     "strict": true,
     "types": ["node"],
-    "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
     "outDir": "dist",
     "noImplicitAny": false
