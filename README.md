@@ -45,6 +45,10 @@ For instance, to build a Create React App project, you update your package.json 
 
 Here's our future directions and plans for the development of this project:
 
+## Dependency Stage: Enhance Rspack Compatibility
+
+Our first essential step for this project is to identify and address the unsupported functionalities in rspack. This pre-initial stage will focus extensively on gaining in-depth insights into rspack, recognizing its limitations, and exploring viable solutions for overcoming these. Our commitment at this juncture is to expedite the detection and resolution of any shortcomings in rspack to prepare a solid foundation for the seamless progression of this project.
+
 ## Initial Focus: Availability Across Different Framework Development Modes
 
 The initial and primary goal is to ensure workability across different frameworks in developer mode. The emphasis here is on improving the developer experience without compromising on essential functionality. In development mode, we expect a higher degree of tolerance for differences from the original webpack configuration and inconsistencies in final output, as long as the project runs correctly.
