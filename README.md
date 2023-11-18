@@ -41,6 +41,18 @@ For instance, to build a Create React App project, you update your package.json 
 }
 ```
 
+# Roadmap
+
+Here's our future directions and plans for the development of this project:
+
+## Initial Focus: Availability Across Different Framework Development Modes
+
+The initial and primary goal is to ensure workability across different frameworks in developer mode. The emphasis here is on improving the developer experience without compromising on essential functionality. In development mode, we expect a higher degree of tolerance for differences from the original webpack configuration and inconsistencies in final output, as long as the project runs correctly.
+
+## Ultimate Goal: Production Mode Build Availability
+
+As the project progresses, our ultimate goal is to guarantee that the package will work under a production environment. We strive to address all operational issues to ensure seamless integration during production builds. This includes addressing scalability and performance issues, minimizing the final output sizes, and optimizing load times. We understand that a smooth, reliable production mode is crucial for any application, and we're committed to making that a reality.
+
 # License
 
 MIT
