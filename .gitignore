@@ -131,4 +131,9 @@ dist
 
 .DS_Store
 
-public/
+/public
+!projects/vue-cli/public
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/

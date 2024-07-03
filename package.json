@@ -4,7 +4,8 @@
   "description": "Seamlessly switch from Webpack to Rspack on the fly",
   "scripts": {
     "dev": "rspack serve",
-    "build": "rspack build"
+    "build": "rspack build",
+    "test": "playwright test"
   },
   "dependencies": {
     "@rspack/core": "1.0.0-alpha.0",
@@ -21,6 +22,7 @@
     "react-refresh": "^0.14.2"
   },
   "devDependencies": {
+    "@playwright/test": "^1.45.1",
     "@rspack/cli": "1.0.0-alpha.0",
     "@types/debug": "^4.1.12",
     "@types/lodash": "^4.14.202",
