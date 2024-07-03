@@ -12,6 +12,9 @@ module.exports = {
     filename: 'viewer.js',
     publicPath: '/'
   },
+  experiments: {
+    css: true
+  },
   builtins: {
 		html: [
 			{
