@@ -7,9 +7,9 @@
     "build": "rspack build"
   },
   "dependencies": {
-    "@rspack/core": "^0.3.14",
-    "@rspack/dev-server": "^0.3.14",
-    "@rspack/plugin-html": "^0.3.14",
+    "@rspack/core": "1.0.0-alpha.0",
+    "@rspack/dev-server": "1.0.0-alpha.0",
+    "@rspack/plugin-html": "0.5.8",
     "arg": "^5.0.2",
     "debug": "^4.3.4",
     "diff": "^5.1.0",
@@ -19,7 +19,7 @@
     "opener": "^1.5.2"
   },
   "devDependencies": {
-    "@rspack/cli": "^0.3.14",
+    "@rspack/cli": "1.0.0-alpha.0",
     "@types/debug": "^4.1.12",
     "@types/lodash": "^4.14.202",
     "@types/node": "^20.9.0",
