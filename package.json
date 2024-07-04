@@ -12,7 +12,6 @@
   "dependencies": {
     "@rspack/core": "1.0.0-alpha.0",
     "@rspack/dev-server": "1.0.0-alpha.0",
-    "@rspack/plugin-html": "0.5.8",
     "@rspack/plugin-react-refresh": "1.0.0-alpha.0",
     "arg": "^5.0.2",
     "debug": "^4.3.4",
@@ -32,7 +31,6 @@
     "@types/node": "^20.9.0",
     "@types/opener": "^1.4.3",
     "copy-webpack-plugin": "^12.0.2",
-    "html-webpack-plugin": "^5.5.3",
     "typescript": "^5.5.3",
     "webpack": "^5.92.1",
     "webpack-dev-server": "^4.15.1"

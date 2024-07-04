@@ -14,9 +14,6 @@ importers:
       '@rspack/dev-server':
         specifier: 1.0.0-alpha.0
         version: 1.0.0-alpha.0(@rspack/core@1.0.0-alpha.0)(debug@4.3.5)(webpack@5.92.1)
-      '@rspack/plugin-html':
-        specifier: 0.5.8
-        version: 0.5.8(@rspack/core@1.0.0-alpha.0)
       '@rspack/plugin-react-refresh':
         specifier: 1.0.0-alpha.0
         version: 1.0.0-alpha.0(react-refresh@0.14.2)
@@ -69,9 +66,6 @@ importers:
       copy-webpack-plugin:
         specifier: ^12.0.2
         version: 12.0.2(webpack@5.92.1)
-      html-webpack-plugin:
-        specifier: ^5.5.3
-        version: 5.6.0(@rspack/core@1.0.0-alpha.0)(webpack@5.92.1)
       typescript:
         specifier: ^5.5.3
         version: 5.5.3
@@ -2519,21 +2513,6 @@ packages:
       - webpack
       - webpack-cli
 
-  /@rspack/plugin-html@0.5.8(@rspack/core@1.0.0-alpha.0):
-    resolution: {integrity: sha512-+Zsdf+dcML+PJ0aXQbpcTP1t9qhEFbFJXK0bTdcp4FzrZihdAbppqvFTzaJuD5q3HPwZkvVFCrzbw/sHABLxWA==}
-    peerDependencies:
-      '@rspack/core': 0.5.8
-    peerDependenciesMeta:
-      '@rspack/core':
-        optional: true
-    dependencies:
-      '@rspack/core': 1.0.0-alpha.0
-      html-minifier-terser: 7.0.0
-      lodash.template: 4.5.0
-      parse5: 7.1.1
-      tapable: 2.2.1
-    dev: false
-
   /@rspack/plugin-react-refresh@1.0.0-alpha.0(react-refresh@0.14.2):
     resolution: {integrity: sha512-JSqxNROnULwe0ql2pwoWWvfAvRqB8qCEEYb8UcLcSbkhaz5dUw1qYMT6qLql3baxo0di5fekBgh905uatukUwg==}
     peerDependencies:
@@ -4735,13 +4714,6 @@ packages:
     resolution: {integrity: sha512-a3KdPAANPbNE4ZUv9h6LckSl9zLsYOP4MBmhIPkRaeyybt+r4UghLvq+xw/YwUcC1gqylCkL4rdVs3Lwupjm4Q==}
     dev: false
 
-  /clean-css@5.2.0:
-    resolution: {integrity: sha512-2639sWGa43EMmG7fn8mdVuBSs6HuWaSor+ZPoFWzenBc6oN+td8YhTfghWXZ25G1NiiSvz8bOFBS7PdSbTiqEA==}
-    engines: {node: '>= 10.0'}
-    dependencies:
-      source-map: 0.6.1
-    dev: false
-
   /clean-css@5.3.3:
     resolution: {integrity: sha512-D5J+kHaVb/wKSFcyyV75uCn8fiY4sV38XJoe4CUyGQ+mOU/fMVYUdH1hJC+CJQ5uY3EnW27SbJYS4X8BiLrAFg==}
     engines: {node: '>= 10.0'}
@@ -4886,11 +4858,6 @@ packages:
   /commander@8.3.0:
     resolution: {integrity: sha512-OkTL9umf+He2DZkUq8f8J9of7yL6RJKI24dVITBmNfZBmri9zYZQrKkuXiKhyfPSu8tUhnVBB1iKXevvnlR4Ww==}
     engines: {node: '>= 12'}
-
-  /commander@9.5.0:
-    resolution: {integrity: sha512-KRs7WVDKg86PWiuAqhDrAQnTXZKraVcCc6vFdL14qrZ/DcWwuRo7VoiYXalXO7S5GKpqYiVEwCbgFDfxNHKJBQ==}
-    engines: {node: ^12.20.0 || >=14}
-    dev: false
 
   /common-tags@1.8.2:
     resolution: {integrity: sha512-gk/Z852D2Wtb//0I+kRFNKKE9dIIVirjoqPoA1wJU+XePVXZfGeBpk45+A1rKO4Q43prqWBNY/MiIeRLbPWUaA==}
@@ -7202,20 +7169,6 @@ packages:
       relateurl: 0.2.7
       terser: 5.31.1
 
-  /html-minifier-terser@7.0.0:
-    resolution: {integrity: sha512-Adqk0b/pWKIQiGvEAuzPKpBKNHiwblr3QSGS7TTr6v+xXKV9AI2k4vWW+6Oytt6Z5SeBnfvYypKOnz8r75pz3Q==}
-    engines: {node: ^14.13.1 || >=16.0.0}
-    hasBin: true
-    dependencies:
-      camel-case: 4.1.2
-      clean-css: 5.2.0
-      commander: 9.5.0
-      entities: 4.5.0
-      param-case: 3.0.4
-      relateurl: 0.2.7
-      terser: 5.31.1
-    dev: false
-
   /html-tags@2.0.0:
     resolution: {integrity: sha512-+Il6N8cCo2wB/Vd3gqy/8TZhTD3QvcVeQLCnZiGkGCH3JP28IgGAY41giccp2W4R3jfyJPAP318FQTa1yU7K7g==}
     engines: {node: '>=4'}
@@ -8683,10 +8636,6 @@ packages:
       p-locate: 5.0.0
     dev: false
 
-  /lodash._reinterpolate@3.0.0:
-    resolution: {integrity: sha512-xYHt68QRoYGjeeM/XOE1uJtvXQAgvszfBhjV4yvsQH0u2i9I6cI6c6/eG4Hh3UAOVn0y/xAXwmTzEay49Q//HA==}
-    dev: false
-
   /lodash.debounce@4.0.8:
     resolution: {integrity: sha512-FT1yDzDYEoYWhnSGnpE/4Kj1fLZkDFyqRb7fNt6FdYOSxlUWAtp42Eh6Wb0rGIv/m9Bgo7x4GhQbm5Ys4SG5ow==}
 
@@ -8710,19 +8659,6 @@ packages:
 
   /lodash.sortby@4.7.0:
     resolution: {integrity: sha512-HDWXG8isMntAyRF5vZ7xKuEvOhT4AhlRt/3czTSjvGUxjYCBVRQY48ViDHyfYz9VIoBkW4TMGQNapx+l3RUwdA==}
-    dev: false
-
-  /lodash.template@4.5.0:
-    resolution: {integrity: sha512-84vYFxIkmidUiFxidA/KjjH9pAycqW+h980j7Fuz5qxRtO9pgB7MDFTdys1N7A5mcucRiDyEq4fusljItR1T/A==}
-    dependencies:
-      lodash._reinterpolate: 3.0.0
-      lodash.templatesettings: 4.2.0
-    dev: false
-
-  /lodash.templatesettings@4.2.0:
-    resolution: {integrity: sha512-stgLz+i3Aa9mZgnjr/O+v9ruKZsPsndy7qPZOchbqk2cnTU1ZaldKK+v7m54WoKIyxiuMZTKT2H81F8BeAc3ZQ==}
-    dependencies:
-      lodash._reinterpolate: 3.0.0
     dev: false
 
   /lodash.truncate@4.4.2:
@@ -9359,12 +9295,6 @@ packages:
 
   /parse5@6.0.1:
     resolution: {integrity: sha512-Ofn/CTFzRGTTxwpNEs9PP93gXShHcTq255nzRYSKe8AkVpZY7e1fpmTfOyoIvjP5HG7Z2ZM7VS9PPhQGW2pOpw==}
-
-  /parse5@7.1.1:
-    resolution: {integrity: sha512-kwpuwzB+px5WUg9pyK0IcK/shltJN5/OVhQagxhCQNtT9Y9QRZqNY2e1cmbu/paRh5LMnz/oVTVLBpjFmMZhSg==}
-    dependencies:
-      entities: 4.5.0
-    dev: false
 
   /parseurl@1.3.3:
     resolution: {integrity: sha512-CiyeOxFT/JZyN5m0z9PfXw4SCBJ6Sygz1Dpl0wqjlhDEGGBP1GnsUVEL0p63hoG1fcj3fHynXi9NYO4nWOL+qQ==}

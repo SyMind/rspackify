@@ -19,7 +19,6 @@ const { printRspackVersion } = (new class {
 })
 
 /** @typedef {import("webpack").Configuration} Configuration */
-/** @typedef {import("html-webpack-plugin").Options} HtmlWebpackPluginOptions */
 /** @typedef {import("@rspack/core").HtmlRspackPluginOptions} HtmlRspackPluginOptions */
 
 const rspackMainPath = require.resolve('@rspack/core');
@@ -42,9 +41,6 @@ mod._resolveFilename = (request, parent, isMain, options) => {
       if (!parent.path.includes(rspackDevServerDir)) {
         request = require.resolve('./webpack/webpack-dev-server');
       }
-      break;
-    case 'html-webpack-plugin':
-      request = require.resolve('@rspack/plugin-html');
       break;
     case 'copy-webpack-plugin':
       request = require.resolve('./webpack-contrib/copy-webpack-plugin');
@@ -168,54 +164,6 @@ extensions['.js'] = (module, filePath) => {
         generateReport(webpackOptions, rspackOptions);
       }
       return originRspack(rspackOptions, callback);
-    };
-  } else if (filePath === require.resolve('@rspack/plugin-html')) {
-    const HTMLRspackPlugin = module.exports.default;
-    module.exports = HTMLRspackPlugin;
-    module.exports.HTMLRspackPlugin = class RspackifyHTMLRspackPlugin extends HTMLRspackPlugin {
-      /**
-       * @param {HtmlWebpackPluginOptions} options
-       */
-      constructor ({
-        filename,
-        template,
-        templateContent,
-        templateParameters,
-        inject,
-        publicPath,
-        scriptLoading,
-        chunks,
-        excludedChunks,
-        sri,
-        minify,
-        title,
-        favicon,
-        // meta,
-      }) {
-        /** @type { HtmlRspackPluginOptions } */
-        const htmlRspackPluginOptions = {
-          // The HtmlRspackPlugin does not support filenames of the 'function' type.
-          filename: typeof filename === 'string' ? filename : undefined,
-          template,
-          // The HtmlRspackPlugin does not support templateContent of the 'string' type.
-          templateContent: typeof templateContent === 'string' ? templateContent : undefined,
-          templateParameters: typeof templateParameters === 'object' ? templateParameters : undefined,
-          inject,
-          publicPath,
-          scriptLoading,
-          // The HtmlRspackPlugin does not support chunks of the 'all' value.
-          chunks: Array.isArray(chunks) ? chunks : undefined,
-          excludedChunks,
-          sri,
-          // The HtmlRspackPlugin only support minify of the 'boolean' type.
-          minify: typeof minify === 'boolean' ? minify : undefined,
-          title,
-          favicon: typeof favicon ==='string'? favicon : undefined,
-          // meta: typeof meta === 'object' ?  meta : undefined,
-        };
-        debug('Options provided to HTMLRspackPlugin %O', htmlRspackPluginOptions);
-        super(htmlRspackPluginOptions);
-      }
     };
   }
 };
