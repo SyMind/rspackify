@@ -30,19 +30,7 @@ For instance, to build a Vue CLI project, you update your `package.json` as foll
 }
 ```
 
-## 🚧 Using with [Taro](https://github.com/nervjs/taro)
-
-For instance, to build a Taro project targeting weapp, you update your `package.json` as follows:
-
-```json
-{
-  "scripts": {
-    "build:weapp": "rspackify taro build --type weapp",
-  }
-}
-```
-
-## 🚧 Using with [Create React App](https://github.com/facebook/create-react-app)
+## 🟢 Using with [Create React App](https://github.com/facebook/create-react-app)
 
 For instance, to build a Create React App project, you update your `package.json` as follows:
 
@@ -51,6 +39,18 @@ For instance, to build a Create React App project, you update your `package.json
   "scripts": {
     "start": "rspackify react-scripts start",
     "build": "rspackify react-scripts build"
+  }
+}
+```
+
+## 🚧 Using with [Taro](https://github.com/nervjs/taro)
+
+For instance, to build a Taro project targeting weapp, you update your `package.json` as follows:
+
+```json
+{
+  "scripts": {
+    "build:weapp": "rspackify taro build --type weapp",
   }
 }
 ```
