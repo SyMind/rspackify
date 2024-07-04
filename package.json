@@ -11,7 +11,7 @@
     "@rspack/core": "1.0.0-alpha.0",
     "@rspack/dev-server": "1.0.0-alpha.0",
     "@rspack/plugin-html": "0.5.8",
-    "@rspack/plugin-react-refresh": "^0.7.5",
+    "@rspack/plugin-react-refresh": "1.0.0-alpha.0",
     "arg": "^5.0.2",
     "debug": "^4.3.4",
     "diff": "^5.1.0",

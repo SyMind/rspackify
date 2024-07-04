@@ -71,10 +71,18 @@ export default defineConfig({
   ],
 
   /* Run your local dev server before starting the tests */
-  webServer: {
-    cwd: path.join(__dirname, 'projects/vue-cli'),
-    command: 'npm run serve -- --port 4200',
-    url: 'http://127.0.0.1:4200/',
-    reuseExistingServer: !process.env.CI,
-  },
+  webServer: [
+    {
+      cwd: path.join(__dirname, 'projects/vue-cli'),
+      command: 'npm run serve -- --port 4200',
+      url: 'http://127.0.0.1:4200/',
+      reuseExistingServer: !process.env.CI,
+    },
+    {
+      cwd: path.join(__dirname, 'projects/create-react-app'),
+      command: 'PORT=4201 npm run start',
+      url: 'http://127.0.0.1:4201/',
+      reuseExistingServer: !process.env.CI,
+    }
+  ],
 });
