@@ -13,14 +13,12 @@
     "@rspack/core": "1.0.0-alpha.0",
     "@rspack/dev-server": "1.0.0-alpha.0",
     "@rspack/plugin-react-refresh": "1.0.0-alpha.0",
-    "arg": "^5.0.2",
     "debug": "^4.3.4",
     "diff": "^5.1.0",
     "diff2html": "^3.4.45",
     "html-escaper": "^3.0.3",
     "lodash": "^4.17.21",
-    "opener": "^1.5.2",
-    "react-refresh": "^0.14.2"
+    "opener": "^1.5.2"
   },
   "devDependencies": {
     "@playwright/test": "^1.45.1",
@@ -30,10 +28,8 @@
     "@types/lodash": "^4.14.202",
     "@types/node": "^20.9.0",
     "@types/opener": "^1.4.3",
-    "copy-webpack-plugin": "^12.0.2",
     "typescript": "^5.5.3",
-    "webpack": "^5.92.1",
-    "webpack-dev-server": "^4.15.1"
+    "webpack": "^5.92.1"
   },
   "bin": {
     "rspackify": "bin.js"
