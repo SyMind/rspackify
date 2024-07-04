@@ -1,3 +1,5 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 const isDev = process.env.NODE_ENV === 'development';
 
 /**
@@ -15,13 +17,6 @@ module.exports = {
   experiments: {
     css: true
   },
-  builtins: {
-		html: [
-			{
-				template: './client/index.html'
-			}
-		]
-	},
 
   devtool: isDev ? 'eval' : 'source-map',
   watch: isDev,
@@ -32,4 +27,5 @@ module.exports = {
   optimization: {
     minimize: !isDev
   },
+  plugins: [new HtmlWebpackPlugin()],
 };

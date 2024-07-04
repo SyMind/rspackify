@@ -1,6 +1,7 @@
 {
   "name": "webpack-boilerplate",
   "version": "3.0.2",
+  "private": true,
   "description": "Sensible webpack 5 boilerplate using Babel and PostCSS.",
   "main": "index.js",
   "author": "Tania Rascia",
