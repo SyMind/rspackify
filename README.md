@@ -16,6 +16,19 @@ npm install -g rspackify
 
 Once installed, you can run rspackify from the terminal followed by your regular commands for build or development. This will replace Webpack invocations with Rspack behind the scenes during runtime.
 
+## 🟢 Using with [Wepback CLI](https://webpack.js.org/api/cli/)
+
+For instance, to build a Wepback CLI project, you update your `package.json` as follows:
+
+```json
+{
+  "scripts": {
+    "start": "rspackify webpack serve",
+    "build": "rspackify webpack"
+  }
+}
+```
+
 ## 🟢 Using with [Vue CLI](https://cli.vuejs.org/)
 
 For instance, to build a Vue CLI project, you update your `package.json` as follows:
@@ -24,8 +37,7 @@ For instance, to build a Vue CLI project, you update your `package.json` as foll
 {
   "scripts": {
     "serve": "rspackify vue-cli-service serve",
-    "build": "rspackify vue-cli-service build",
-    "lint": "rspackify vue-cli-service lint"
+    "build": "rspackify vue-cli-service build"
   }
 }
 ```

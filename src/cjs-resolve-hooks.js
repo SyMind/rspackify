@@ -130,6 +130,9 @@ extensions['.js'] = (module, filePath) => {
       // The util is not supported in rspack
       module.exports.util = {};
     }
+    if (!module.exports.cli) {
+      module.exports.cli = require('./webpack/lib/cli');
+    }
     if (!module.exports.util.serialization) {
       module.exports.util.serialization = {
         register() {

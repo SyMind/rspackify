@@ -11,7 +11,8 @@
     "allowSyntheticDefaultImports": true,
     "outDir": "dist",
     "noImplicitAny": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "resolveJsonModule": true
   },
   "include": [
     "./src/**/*"
