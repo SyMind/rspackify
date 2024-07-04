@@ -1,14 +1,12 @@
 # Rspackify
 
-Seamlessly switch from Webpack to Rspack on the fly ⚡️.
-
-Perfect for use with various frameworks such as Taro, Next.js, and more that deeply integrate Webpack, now allowing you to switch to Rspack with ease.
+Experience lightning-fast builds by instantly switching from Webpack to Rspack ⚡️.
 
 > 🚨 Please note: very early work in progress. Almost nothing works yet. Contributions welcome!
 
 # Usage
 
-Rspackify is a command-line utility that can be installed globally or as part of a Node.js project.
+Rspackify is a command-line utility that can be installed globally or as part of your project.
 
 ```bash
 npm install -g rspackify
