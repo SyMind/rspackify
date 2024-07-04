@@ -83,6 +83,12 @@ export default defineConfig({
       command: 'PORT=4201 npm run start',
       url: 'http://127.0.0.1:4201/',
       reuseExistingServer: !process.env.CI,
+    },
+    {
+      cwd: path.join(__dirname, 'projects/webpack'),
+      command: 'npm run start -- --port 4202',
+      url: 'http://127.0.0.1:4202/',
+      reuseExistingServer: !process.env.CI,
     }
   ],
 });

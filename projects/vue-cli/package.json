@@ -5,7 +5,7 @@
   "scripts": {
     "serve": "rspackify vue-cli-service serve",
     "build": "rspackify vue-cli-service build",
-    "lint": "rspackify vue-cli-service lint"
+    "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "core-js": "^3.8.3",
@@ -40,6 +40,5 @@
     "last 2 versions",
     "not dead",
     "not ie 11"
-  ],
-  "packageManager": "pnpm@8.15.1+sha256.245fe901f8e7fa8782d7f17d32b6a83995e2ae03984cb5b62b8949bfdc27c7b5"
+  ]
 }

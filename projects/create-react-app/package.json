@@ -14,8 +14,8 @@
   "scripts": {
     "start": "rspackify react-scripts start",
     "build": "rspackify react-scripts build",
-    "test": "rspackify react-scripts test",
-    "eject": "rspackify react-scripts eject"
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
@@ -36,6 +36,6 @@
     ]
   },
   "devDependencies": {
-    "rspackify": "workspace:^"
+    "rspackify": "workspace:*"
   }
 }
