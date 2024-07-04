@@ -1,18 +1,19 @@
 {
   "compilerOptions": {
-    "target": "ES2017",
-    "module": "esnext",
+    "target": "ES6",
+    "module": "CommonJS",
     "moduleResolution": "Node",
     "lib": ["es2017", "dom"],
     "allowJs": true,
-    "checkJs": true,
-    "strict": true,
+    "checkJs": false,
+    "skipLibCheck": true,
     "types": ["node"],
     "allowSyntheticDefaultImports": true,
     "outDir": "dist",
-    "noImplicitAny": false
+    "noImplicitAny": true,
+    "esModuleInterop": true
   },
   "include": [
-    "./lib/**/*"
+    "./src/**/*"
   ]
 }

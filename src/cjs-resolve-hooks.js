@@ -1,9 +1,8 @@
 const mod = require("module");
 const path = require('path');
 const debug = require('debug')('rspackify');
-const { mergeExports } = require('./webpack');
-const prepareOptions = require('./prepareOptions');
-const generateReport = require('./generateReport');
+const { prepareRspackConfig } = require('./prepare-rspack-config');
+const { generateReport } = require('./generate-report');
 
 const { printRspackVersion } = (new class {
   printed = false
@@ -124,13 +123,6 @@ extensions['.js'] = (module, filePath) => {
     if (!module.exports.Template) {
       module.exports.Template = require('./webpack/lib/Template');
     }
-    if (!module.exports.IgnorePlugin) {
-      module.exports.IgnorePlugin = class RspackifyIgnorePlugin {
-        apply() {
-          console.log('[Rspackify] IgnorePlugin is not supported in rspack. A void placeholder will be provided as a substitute.');
-        }
-      };
-    }
     if (!module.exports.RuntimeModule) {
       module.exports.RuntimeModule = class RspackifyRuntimeModule {
         constructor() {
@@ -150,6 +142,14 @@ extensions['.js'] = (module, filePath) => {
       }
     }
 
+    const mergeExports = (obj, exports) => {
+      const names = Object.getOwnPropertyNames(exports);
+      for (const name of names) {
+        obj[name] = exports[name];
+      }
+      return obj;
+    };
+
     // default export should be a rspack function
     const originExports = module.exports;
     module.exports = mergeExports(originExports.rspack, originExports);
@@ -163,7 +163,7 @@ extensions['.js'] = (module, filePath) => {
      * @returns
      */
     module.exports.rspack = (webpackOptions, callback) => {
-      const rspackOptions = prepareOptions(webpackOptions);
+      const rspackOptions = prepareRspackConfig(webpackOptions);
       if (debug.enabled) {
         generateReport(webpackOptions, rspackOptions);
       }

@@ -12,7 +12,7 @@ Object.defineProperty(exports, "__esModule", {
 function deleteAppClientCache() {
 }
 
-function deleteCache(filePath) {
+function deleteCache() {
 }
 
 module.exports = {

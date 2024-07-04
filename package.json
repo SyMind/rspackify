@@ -3,8 +3,10 @@
   "version": "0.0.2",
   "description": "Seamlessly switch from Webpack to Rspack on the fly",
   "scripts": {
-    "dev": "rspack serve",
-    "build": "rspack build",
+    "build": "pnpm run build:lib && pnpm run build:viewer",
+    "dev:viewer": "rspack serve",
+    "build:viewer": "rspack build",
+    "build:lib": "tsc",
     "test": "playwright test"
   },
   "dependencies": {
@@ -25,18 +27,21 @@
     "@playwright/test": "^1.45.1",
     "@rspack/cli": "1.0.0-alpha.0",
     "@types/debug": "^4.1.12",
+    "@types/html-escaper": "^3.0.2",
     "@types/lodash": "^4.14.202",
     "@types/node": "^20.9.0",
+    "@types/opener": "^1.4.3",
+    "copy-webpack-plugin": "^12.0.2",
     "html-webpack-plugin": "^5.5.3",
+    "typescript": "^5.5.3",
     "webpack": "^5.92.1",
     "webpack-dev-server": "^4.15.1"
   },
   "bin": {
-    "rspackify": "lib/bin.js"
+    "rspackify": "bin.js"
   },
   "files": [
-    "lib",
-    "dist-raw"
+    "dist"
   ],
   "repository": {
     "type": "git",

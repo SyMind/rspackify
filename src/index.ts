@@ -1,7 +1,5 @@
-#!/usr/bin/env node
-
-const cp = require('child_process');
-const path = require('path');
+import * as cp from 'child_process';
+import * as path from 'path';
 
 const cjsResolveHooksPath = path.join(__dirname, 'cjs-resolve-hooks');
 const [scriptToRun, ...scriptArgs] = process.argv.slice(2);
