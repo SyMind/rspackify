@@ -1,6 +1,6 @@
 {
   "name": "rspackify",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Seamlessly switch from Webpack to Rspack on the fly",
   "scripts": {
     "build": "pnpm run build:lib && pnpm run build:viewer",
