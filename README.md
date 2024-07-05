@@ -4,19 +4,29 @@ Experience lightning-fast builds by instantly switching from Webpack to Rspack �
 
 > 🚨 Please note: very early work in progress. Contributions welcome!
 
-# Usage
+# Using with `npx`
 
-Rspackify is a command-line utility that can be installed globally or as part of your project.
+To quickly use Rspackify without installing it globally, you can run:
+
+```bash
+npx rspackify npm run dev
+```
+
+Replace `npm run dev` with your project's actual development or build command.
+
+# Installation
+
+You can also install Rspackify globally or as part of your project.
 
 ```bash
 npm install -g rspackify
 ```
 
-Once installed, you can run rspackify from the terminal followed by your regular commands for build or development. This will replace Webpack invocations with Rspack behind the scenes during runtime.
+Once installed, you can run `rspackify` from the terminal followed by your regular commands for build or development.
 
 ## 🟢 Using with [Wepback CLI](https://webpack.js.org/api/cli/)
 
-For instance, to build a Wepback CLI project, you update your `package.json` as follows:
+To build a Webpack CLI project, update your `package.json` as follows:
 
 ```json
 {
@@ -29,7 +39,7 @@ For instance, to build a Wepback CLI project, you update your `package.json` as 
 
 ## 🟢 Using with [Vue CLI](https://cli.vuejs.org/)
 
-For instance, to build a Vue CLI project, you update your `package.json` as follows:
+To build a Vue CLI project, update your `package.json`:
 
 ```json
 {
@@ -42,7 +52,7 @@ For instance, to build a Vue CLI project, you update your `package.json` as foll
 
 ## 🟢 Using with [UmiJS](https://cli.vuejs.org/)
 
-For instance, to build a Vue CLI project, you update your `package.json` as follows:
+To build an UmiJS project, update your `package.json`:
 
 ```json
 {
@@ -55,7 +65,7 @@ For instance, to build a Vue CLI project, you update your `package.json` as foll
 
 ## 🟢 Using with [Create React App](https://github.com/facebook/create-react-app)
 
-For instance, to build a Create React App project, you update your `package.json` as follows:
+To build a Create React App project, update your `package.json`:
 
 ```json
 {
@@ -68,7 +78,7 @@ For instance, to build a Create React App project, you update your `package.json
 
 ## 🚧 Using with [Taro](https://github.com/nervjs/taro)
 
-For instance, to build a Taro project targeting weapp, you update your `package.json` as follows:
+To build a Taro project targeting Weapp, update your `package.json`:
 
 ```json
 {
