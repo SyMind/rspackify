@@ -2,7 +2,7 @@
 
 Experience lightning-fast builds by instantly switching from Webpack to Rspack ⚡️.
 
-> 🚨 Please note: very early work in progress. Almost nothing works yet. Contributions welcome!
+> 🚨 Please note: very early work in progress. Contributions welcome!
 
 # Usage
 
