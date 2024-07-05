@@ -61,13 +61,12 @@ export const prepareRspackConfig = (
   //   config.module.rules = prepareRules(config.module.rules);
   // }
 
-  // Removing css-loader style-loader and mini-css-extract-plugin
   if (config.plugins) {
     for (const plugin of config.plugins) {
       if (
         plugin &&
         [
-          'ModuleNotFoundPlugin',
+          // ...
         ].includes(plugin.constructor.name)
       ) {
         config.plugins = config.plugins.filter(item => item !== plugin);
