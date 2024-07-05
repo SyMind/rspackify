@@ -123,6 +123,13 @@ mod._resolveFilename = (request, parent, isMain, options) => {
     case '../../compiled/webpack-virtual-modules':
       request = require.resolve('./webpack-contrib/webpack-virtual-modules');
       break;
+    case '@umijs/react-refresh-webpack-plugin/lib':
+      request = require.resolve('./webpack-contrib/react-refresh-webpack-plugin');
+      break;
+    case '@umijs/bundler-webpack/compiled/mini-css-extract-plugin/loader':
+      const { CssExtractRspackPlugin } = require('@rspack/core');
+      request = CssExtractRspackPlugin.loader;
+      break;
   }
 	return defaultResolveFilename(
     request,
