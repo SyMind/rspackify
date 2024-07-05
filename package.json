@@ -10,9 +10,9 @@
     "test": "playwright test"
   },
   "dependencies": {
-    "@rspack/core": "1.0.0-alpha.0",
-    "@rspack/dev-server": "1.0.0-alpha.0",
-    "@rspack/plugin-react-refresh": "1.0.0-alpha.0",
+    "@rspack/core": "1.0.0-alpha.1",
+    "@rspack/dev-server": "1.0.0-alpha.1",
+    "@rspack/plugin-react-refresh": "1.0.0-alpha.1",
     "debug": "^4.3.4",
     "diff": "^5.1.0",
     "diff2html": "^3.4.45",
@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "@playwright/test": "^1.45.1",
-    "@rspack/cli": "1.0.0-alpha.0",
+    "@rspack/cli": "1.0.0-alpha.1",
     "@types/debug": "^4.1.12",
     "@types/html-escaper": "^3.0.2",
     "@types/lodash": "^4.14.202",

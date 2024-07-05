@@ -57,16 +57,6 @@ export const prepareRspackConfig = (
 
   const config = cloneDeep(webpackConfig);
 
-  // IGNORE: will supported in next rspack verison
-  if (Array.isArray(config.target)) {
-    const target = config.target;
-    for (let i = 0; i < target.length; i++) {
-      if (target[i] === 'es6') {
-        target[i] === 'es2015'
-      }
-    }
-  }
-
   // if (config.module.rules) {
   //   config.module.rules = prepareRules(config.module.rules);
   // }
