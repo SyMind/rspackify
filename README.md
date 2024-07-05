@@ -22,7 +22,7 @@ You can also install Rspackify globally or as part of your project.
 npm install -g rspackify
 ```
 
-Once installed, you can run `rspackify` from the terminal followed by your regular commands for build or development.
+Once installed, you can run `rspackify` from the terminal followed by your project's actual development or build command.
 
 ## 🟢 Using with [Wepback CLI](https://webpack.js.org/api/cli/)
 
