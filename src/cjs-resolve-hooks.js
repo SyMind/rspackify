@@ -107,6 +107,22 @@ mod._resolveFilename = (request, parent, isMain, options) => {
     case './webpack/plugins/next-types-plugin':
       request = require.resolve('./nextjs/next-types-plugin');
       break;
+
+    // umijs
+    case '@umijs/bundler-webpack/compiled/webpack':
+    case '../compiled/webpack':
+    case '../../compiled/webpack':
+      request = require.resolve('@rspack/core');
+      break;
+    case '@umijs/bundler-webpack/compiled/mini-css-extract-plugin':
+      request = require.resolve('./webpack-contrib/mini-css-extract-plugin');
+      break;
+    case '@umijs/bundler-webpack/compiled/webpack-manifest-plugin':
+      equest = require.resolve('./webpack-contrib/webpack-manifest-plugin');
+      break;
+    case '../../compiled/webpack-virtual-modules':
+      request = require.resolve('./webpack-contrib/webpack-virtual-modules');
+      break;
   }
 	return defaultResolveFilename(
     request,
