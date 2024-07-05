@@ -1,52 +1,49 @@
 import { cloneDeep } from 'lodash';
-import type { Configuration as WebpackConfiguration } from 'webpack';
-import type { Configuration as RspackConfiguration } from '@rspack/core';
+import type { Configuration as WebpackConfiguration, RuleSetRule as WebpackRuleSetRule } from 'webpack';
+import type { Configuration as RspackConfiguration, RuleSetRule as RspackRuleSetRule } from '@rspack/core';
 
-// const prepareRules = (webpackRules: (WebpackRuleSetRule | "...")[]) => {
-//   const rspackRules = [];
-//   for (const webpackRule of webpackRules) {
-//     if (typeof webpackRule === 'string') {
-//       rspackRules.push(webpackRule);
-//       continue;
-//     }
-//     if (webpackRule.oneOf) {
-//       webpackRule.oneOf = prepareRules(webpackRule.oneOf);
-//     }
-//     if (webpackRule.rules) {
-//       webpackRule.rules = prepareRules(webpackRule.rules);
-//     }
-//     // TODO: Add more detailed checks to see if it's possible to remove babel-loader and use built-in loader instead.
-//     if (webpackRule.loader) {
-//       if (webpackRule.loader.includes('css-loader')) {
-//         delete webpackRule.loader;
-//         webpackRule.type = 'css/auto';
-//       }
-//     }
-//     if (typeof webpackRule.use === 'string') {
-//       if (webpackRule.use.includes('css-loader')) {
-//         delete webpackRule.use;
-//         webpackRule.type = 'css/auto';
-//       }
-//     }
+function prepareRspackUse(webpackUse: WebpackRuleSetRule['use']): RspackRuleSetRule['use'] {
+  if (typeof webpackUse === 'string') {
+    if (webpackUse === 'swc-loader') {
+      return 'builtin:swc-loader';
+    }
+    return webpackUse;
+  }
+  if (Array.isArray(webpackUse)) {
+    for (const item of webpackUse) {
+      if (item) {
+        prepareRspackUse(item);
+      }
+    }
+  }
+  return webpackUse as RspackRuleSetRule['use'];
+}
 
-//     // TODO:
-//     delete webpackRule.generator;
-
-//     if (Array.isArray(webpackRule.use)) {
-//       for (const item of webpackRule.use) {
-//         if ((
-//           typeof item === 'string' && item.includes('css-loader')) ||
-//           (typeof item === 'object' && item.loader?.includes('css-loader'))
-//         ) {
-//           webpackRule.use.filter(i => i !== item);
-//           webpackRule.type = 'css/auto';
-//         }
-//       }
-//     }
-//     rspackRules.push(webpackRule);
-//   }
-//   return rspackRules;
-// }
+function prepareRspackRules(webpackRules: (undefined | null | false | "" | 0 | WebpackRuleSetRule | "...")[]): (RspackRuleSetRule | "...")[] {
+  const rspackRules: (RspackRuleSetRule | "...")[] = [];
+  for (const webpackRule of webpackRules) {
+    if (!webpackRule) {
+      continue;
+    }
+    if (typeof webpackRule === 'string') {
+      rspackRules.push(webpackRule);
+      continue;
+    }
+   
+    const rspackRule = webpackRule as RspackRuleSetRule;
+    if (webpackRule.oneOf) {
+      rspackRule.oneOf = prepareRspackRules(webpackRule.oneOf) as RspackRuleSetRule[];
+    }
+    if (webpackRule.rules) {
+      rspackRule.rules = prepareRspackRules(webpackRule.rules) as RspackRuleSetRule[];
+    }
+    if (webpackRule.use) {
+      rspackRule.use = prepareRspackUse(webpackRule.use);
+    }
+    rspackRules.push(rspackRule);
+  }
+  return rspackRules;
+}
 
 export const prepareRspackConfig = (
     webpackConfig: WebpackConfiguration | WebpackConfiguration[]
@@ -57,9 +54,9 @@ export const prepareRspackConfig = (
 
   const config = cloneDeep(webpackConfig);
 
-  // if (config.module.rules) {
-  //   config.module.rules = prepareRules(config.module.rules);
-  // }
+  if (config.module.rules) {
+    config.module.rules = prepareRspackRules(config.module.rules) as any;
+  }
 
   if (config.plugins) {
     for (const plugin of config.plugins) {
