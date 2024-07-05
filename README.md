@@ -1,6 +1,6 @@
 # Rspackify
 
-Experience lightning-fast builds by instantly switching from Webpack to Rspack ⚡️.
+Experience lightning-fast builds by instantly switching from Webpack to [Rspack](https://www.rspack.dev/) ⚡️.
 
 > 🚨 Please note: very early work in progress. Contributions welcome!
 
