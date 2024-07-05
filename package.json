@@ -19,7 +19,8 @@
     "html-escaper": "^3.0.3",
     "lodash": "^4.17.21",
     "opener": "^1.5.2",
-    "rspack-manifest-plugin": "^5.0.0"
+    "rspack-manifest-plugin": "^5.0.0",
+    "rspack-plugin-virtual-module": "^0.1.13"
   },
   "devDependencies": {
     "@playwright/test": "^1.45.1",

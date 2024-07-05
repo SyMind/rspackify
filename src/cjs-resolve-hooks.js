@@ -54,6 +54,9 @@ mod._resolveFilename = (request, parent, isMain, options) => {
     case 'webpack-manifest-plugin':
       request = require.resolve('./webpack-contrib/webpack-manifest-plugin');
       break;
+    case 'webpack-virtual-modules':
+      request = require.resolve('./webpack-contrib/webpack-virtual-modules');
+      break;
 
     // Next.js
     case 'next/dist/compiled/webpack/webpack':
