@@ -1,0 +1,44 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "moduleResolution": "bundler",
+    "importHelpers": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "baseUrl": "../../",
+    "strict": true,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "paths": {
+      "@/*": [
+        "src/*"
+      ],
+      "@@/*": [
+        "src/.umi/*"
+      ],
+      "umi": [
+        "/Users/bytedance/Documents/my_github/rspackify/node_modules/.pnpm/umi@4.3.1_@babel+core@7.24.7_@types+node@20.14.9_@types+react@18.3.3_eslint@8.57.0_prettier@2_mnfi5clizw2drq5lotefmq2ryu/node_modules/umi"
+      ],
+      "umi/typings": [
+        "src/.umi/typings"
+      ]
+    }
+  },
+  "include": [
+    "../../.umirc.ts",
+    "../../.umirc.*.ts",
+    "../../**/*.d.ts",
+    "../../**/*.ts",
+    "../../**/*.tsx"
+  ]
+}

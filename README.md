@@ -40,6 +40,19 @@ For instance, to build a Vue CLI project, you update your `package.json` as foll
 }
 ```
 
+## 🟢 Using with [UmiJS](https://cli.vuejs.org/)
+
+For instance, to build a Vue CLI project, you update your `package.json` as follows:
+
+```json
+{
+  "scripts": {
+    "serve": "rspackify umi dev",
+    "build": "rspackify umi build"
+  }
+}
+```
+
 ## 🟢 Using with [Create React App](https://github.com/facebook/create-react-app)
 
 For instance, to build a Create React App project, you update your `package.json` as follows:

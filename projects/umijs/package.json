@@ -1,0 +1,20 @@
+{
+  "private": true,
+  "author": "Cong-Cong <dacongsama@live.com>",
+  "scripts": {
+    "dev": "rspackify umi dev",
+    "build": "rspackify umi build",
+    "postinstall": "umi setup",
+    "setup": "umi setup",
+    "start": "npm run dev"
+  },
+  "dependencies": {
+    "umi": "^4.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.33",
+    "@types/react-dom": "^18.0.11",
+    "rspackify": "workspace:*",
+    "typescript": "^5.0.3"
+  }
+}
