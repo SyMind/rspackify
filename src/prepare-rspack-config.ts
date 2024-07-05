@@ -68,7 +68,6 @@ export const prepareRspackConfig = (
         plugin &&
         [
           'ModuleNotFoundPlugin',
-          'WebpackManifestPlugin'
         ].includes(plugin.constructor.name)
       ) {
         config.plugins = config.plugins.filter(item => item !== plugin);

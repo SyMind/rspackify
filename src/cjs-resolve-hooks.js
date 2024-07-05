@@ -51,6 +51,9 @@ mod._resolveFilename = (request, parent, isMain, options) => {
     case '@pmmmwh/react-refresh-webpack-plugin':
       request = require.resolve('./webpack-contrib/react-refresh-webpack-plugin');
       break;
+    case 'webpack-manifest-plugin':
+      request = require.resolve('./webpack-contrib/webpack-manifest-plugin');
+      break;
 
     // Next.js
     case 'next/dist/compiled/webpack/webpack':

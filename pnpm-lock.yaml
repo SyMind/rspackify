@@ -35,6 +35,9 @@ importers:
       opener:
         specifier: ^1.5.2
         version: 1.5.2
+      rspack-manifest-plugin:
+        specifier: ^5.0.0
+        version: 5.0.0(@rspack/core@1.0.0-alpha.1)
     devDependencies:
       '@playwright/test':
         specifier: ^1.45.1
@@ -11191,6 +11194,20 @@ packages:
     hasBin: true
     optionalDependencies:
       fsevents: 2.3.3
+    dev: false
+
+  /rspack-manifest-plugin@5.0.0(@rspack/core@1.0.0-alpha.1):
+    resolution: {integrity: sha512-Rtpn6GI4mpTASPmLOGiHzv3KqVWuWhGJG9CKO7aioPrAhukML4jtgYUvbQdBze/mZcDrvqf6sxEGRGx5fKQ+ag==}
+    engines: {node: '>=14'}
+    peerDependencies:
+      '@rspack/core': 0.x || 1.x
+    peerDependenciesMeta:
+      '@rspack/core':
+        optional: true
+    dependencies:
+      '@rspack/core': 1.0.0-alpha.1
+      tapable: 2.2.1
+      webpack-sources: 2.3.1
     dev: false
 
   /run-parallel@1.2.0:
