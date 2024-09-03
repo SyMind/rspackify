@@ -1,6 +1,9 @@
 const mod = require("module");
 const path = require('path');
+const fs = require('fs');
 const debug = require('debug')('rspackify');
+const semver = require('semver');
+const { findPackageSync } = require('fd-package-json');
 const { prepareRspackConfig } = require('./prepare-rspack-config');
 const { generateReport } = require('./generate-report');
 
@@ -28,6 +31,9 @@ const rspackFnPath = path.join(rspackCoreDir, 'dist/rspack.js');
 const rspackDevServerMainPath = require.resolve('@rspack/dev-server');
 const rspackDevServerDir = path.resolve(rspackDevServerMainPath, '../..');
 
+const rspackDevServerMainPathV4 = require.resolve('@rspack/dev-server-v4');
+const rspackDevServerDirV4 = path.resolve(rspackDevServerMainPathV4, '../..');
+
 // @ts-ignore
 const defaultResolveFilename = mod._resolveFilename.bind(mod);
 // @ts-ignore
@@ -38,8 +44,23 @@ mod._resolveFilename = (request, parent, isMain, options) => {
       request = require.resolve('@rspack/core');
       break;
     case 'webpack-dev-server':
-      if (!parent.path.includes(rspackDevServerDir)) {
-        request = require.resolve('./webpack/webpack-dev-server');
+      if (!parent.path.includes(rspackDevServerDir) && !parent.path.includes(rspackDevServerDirV4)) {
+        const webpackDevServerPath = defaultResolveFilename(request, parent, isMain, options);
+        const packageJson = findPackageSync(webpackDevServerPath);
+        if (packageJson.name !== 'webpack-dev-server') {
+          console.warn(
+            "Rspackify: Unable to detect your webpack-dev-server version. " +
+            "Using the latest @rspack/dev-server, which is based on webpack-dev-server@v5. " +
+            "This may lead to compatibility issues."
+          );
+          request = require.resolve('./webpack/webpack-dev-server');
+        } else {
+          if (semver.lt(packageJson.version, '5.0.0')) {
+            request = require.resolve('./webpack/webpack-dev-server-v4');
+          } else {
+            request = require.resolve('./webpack/webpack-dev-server');
+          }
+        }
       }
       break;
     case 'copy-webpack-plugin':
