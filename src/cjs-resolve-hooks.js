@@ -31,6 +31,9 @@ const rspackFnPath = path.join(rspackCoreDir, 'dist/rspack.js');
 const rspackDevServerMainPath = require.resolve('@rspack/dev-server');
 const rspackDevServerDir = path.resolve(rspackDevServerMainPath, '../..');
 
+const rspackDevServerMainPathV4 = require.resolve('@rspack/dev-server-v4');
+const rspackDevServerDirV4 = path.resolve(rspackDevServerMainPathV4, '../..');
+
 // @ts-ignore
 const defaultResolveFilename = mod._resolveFilename.bind(mod);
 // @ts-ignore
@@ -41,7 +44,7 @@ mod._resolveFilename = (request, parent, isMain, options) => {
       request = require.resolve('@rspack/core');
       break;
     case 'webpack-dev-server':
-      if (!parent.path.includes(rspackDevServerDir)) {
+      if (!parent.path.includes(rspackDevServerDir) && !parent.path.includes(rspackDevServerDirV4)) {
         const webpackDevServerPath = defaultResolveFilename(request, parent, isMain, options);
         const packageJson = findPackageSync(webpackDevServerPath);
         if (packageJson.name !== 'webpack-dev-server') {
