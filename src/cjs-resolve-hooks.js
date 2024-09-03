@@ -1,6 +1,8 @@
 const mod = require("module");
 const path = require('path');
+const fs = require('fs');
 const debug = require('debug')('rspackify');
+const semver = require('semver')
 const { prepareRspackConfig } = require('./prepare-rspack-config');
 const { generateReport } = require('./generate-report');
 
@@ -39,7 +41,14 @@ mod._resolveFilename = (request, parent, isMain, options) => {
       break;
     case 'webpack-dev-server':
       if (!parent.path.includes(rspackDevServerDir)) {
-        request = require.resolve('./webpack/webpack-dev-server');
+        const webpackDevServerPath = defaultResolveFilename(request, parent, isMain, options);
+        const packageJsonPath = path.resolve(webpackDevServerPath, '../../package.json');
+        const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf-8'));
+        if (semver.lt(packageJson.version, '5.0.0')) {
+          request = require.resolve('./webpack/webpack-dev-server-v4');
+        } else {
+          request = require.resolve('./webpack/webpack-dev-server');
+        }
       }
       break;
     case 'copy-webpack-plugin':

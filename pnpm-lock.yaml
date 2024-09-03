@@ -17,6 +17,9 @@ importers:
       '@rspack/dev-server':
         specifier: 1.0.0
         version: 1.0.0(@rspack/core@1.0.0)(debug@4.3.5)(webpack@5.92.1)
+      '@rspack/dev-server-v4':
+        specifier: npm:@rspack/dev-server@v1.0.0-beta.0
+        version: /@rspack/dev-server@1.0.0-beta.0(@rspack/core@1.0.0)(debug@4.3.5)(webpack@5.92.1)
       '@rspack/plugin-react-refresh':
         specifier: 1.0.0-alpha.1
         version: 1.0.0-alpha.1
@@ -44,6 +47,9 @@ importers:
       rspack-plugin-virtual-module:
         specifier: ^0.1.13
         version: 0.1.13
+      semver:
+        specifier: ^7.6.3
+        version: 7.6.3
     devDependencies:
       '@playwright/test':
         specifier: ^1.45.1
@@ -3287,7 +3293,7 @@ packages:
       exit-hook: 3.2.0
       interpret: 3.1.1
       rechoir: 0.8.0
-      semver: 7.6.2
+      semver: 7.6.3
       webpack-bundle-analyzer: 4.6.1
       yargs: 17.6.2
     transitivePeerDependencies:
@@ -3336,6 +3342,30 @@ packages:
       - utf-8-validate
       - webpack
       - webpack-cli
+
+  /@rspack/dev-server@1.0.0-beta.0(@rspack/core@1.0.0)(debug@4.3.5)(webpack@5.92.1):
+    resolution: {integrity: sha512-R/vQWvvDgVIsnux3qIGzdKG0g3gX6G09Xx7mupjv+JtMCLPD/uK4d24aTXWApHvt41eHc6n+Ju4G19sQBZpryA==}
+    peerDependencies:
+      '@rspack/core': '*'
+    dependencies:
+      '@rspack/core': 1.0.0
+      chokidar: 3.6.0
+      connect-history-api-fallback: 2.0.0
+      express: 4.19.2
+      http-proxy-middleware: 2.0.6(@types/express@4.17.21)(debug@4.3.5)
+      mime-types: 2.1.35
+      webpack-dev-middleware: 7.4.2(webpack@5.92.1)
+      webpack-dev-server: 5.0.4(debug@4.3.5)(webpack@5.92.1)
+      ws: 8.17.1
+    transitivePeerDependencies:
+      - '@types/express'
+      - bufferutil
+      - debug
+      - supports-color
+      - utf-8-validate
+      - webpack
+      - webpack-cli
+    dev: false
 
   /@rspack/lite-tapable@1.0.0:
     resolution: {integrity: sha512-7MZf4lburSUZoEenwazwUDKHhqyfnLCGnQ/tKcUtztfmVzfjZfRn/EaiT0AKkYGnL2U8AGsw89oUeVyvaOLVCw==}
@@ -14630,6 +14660,11 @@ packages:
 
   /semver@7.6.2:
     resolution: {integrity: sha512-FNAIBWCx9qcRhoHcgcJ0gvU7SN1lYU2ZXuSfl04bSC5OpvDHFyJCjdNHomPXxjQlCBU67YW64PzY7/VIEH7F2w==}
+    engines: {node: '>=10'}
+    hasBin: true
+
+  /semver@7.6.3:
+    resolution: {integrity: sha512-oVekP1cKtI+CTDvHWYFUcMtsK/00wmAEfyqKfNdARm8u1wNVhSgaX7A8d4UuIlUI5e84iEwOhs7ZPYRmzU9U6A==}
     engines: {node: '>=10'}
     hasBin: true
 

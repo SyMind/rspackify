@@ -13,6 +13,7 @@
     "@aaroon/workbox-rspack-plugin": "^0.3.1",
     "@rspack/core": "1.0.0",
     "@rspack/dev-server": "1.0.0",
+    "@rspack/dev-server-v4": "npm:@rspack/dev-server@v1.0.0-beta.0",
     "@rspack/plugin-react-refresh": "1.0.0-alpha.1",
     "debug": "^4.3.4",
     "diff": "^5.1.0",
@@ -21,7 +22,8 @@
     "lodash": "^4.17.21",
     "opener": "^1.5.2",
     "rspack-manifest-plugin": "^5.0.0",
-    "rspack-plugin-virtual-module": "^0.1.13"
+    "rspack-plugin-virtual-module": "^0.1.13",
+    "semver": "^7.6.3"
   },
   "devDependencies": {
     "@playwright/test": "^1.45.1",
