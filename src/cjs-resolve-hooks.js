@@ -2,7 +2,8 @@ const mod = require("module");
 const path = require('path');
 const fs = require('fs');
 const debug = require('debug')('rspackify');
-const semver = require('semver')
+const semver = require('semver');
+const { findPackageSync } = require('fd-package-json');
 const { prepareRspackConfig } = require('./prepare-rspack-config');
 const { generateReport } = require('./generate-report');
 
@@ -42,12 +43,20 @@ mod._resolveFilename = (request, parent, isMain, options) => {
     case 'webpack-dev-server':
       if (!parent.path.includes(rspackDevServerDir)) {
         const webpackDevServerPath = defaultResolveFilename(request, parent, isMain, options);
-        const packageJsonPath = path.resolve(webpackDevServerPath, '../../package.json');
-        const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf-8'));
-        if (semver.lt(packageJson.version, '5.0.0')) {
-          request = require.resolve('./webpack/webpack-dev-server-v4');
-        } else {
+        const packageJson = findPackageSync(webpackDevServerPath);
+        if (packageJson.name !== 'webpack-dev-server') {
+          console.warn(
+            "Rspackify: Unable to detect your webpack-dev-server version. " +
+            "Using the latest @rspack/dev-server, which is based on webpack-dev-server@v5. " +
+            "This may lead to compatibility issues."
+          );
           request = require.resolve('./webpack/webpack-dev-server');
+        } else {
+          if (semver.lt(packageJson.version, '5.0.0')) {
+            request = require.resolve('./webpack/webpack-dev-server-v4');
+          } else {
+            request = require.resolve('./webpack/webpack-dev-server');
+          }
         }
       }
       break;

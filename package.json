@@ -18,6 +18,7 @@
     "debug": "^4.3.4",
     "diff": "^5.1.0",
     "diff2html": "^3.4.45",
+    "fd-package-json": "^1.2.0",
     "html-escaper": "^3.0.3",
     "lodash": "^4.17.21",
     "opener": "^1.5.2",
