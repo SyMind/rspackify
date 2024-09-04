@@ -2,8 +2,6 @@
 
 Experience lightning-fast builds by instantly switching from Webpack to [Rspack](https://www.rspack.dev/) ⚡️.
 
-> 🚨 Please note: very early work in progress. Contributions welcome!
-
 # Using with `npx`
 
 To quickly use Rspackify without installing it globally, you can run:
@@ -50,7 +48,7 @@ To build a Vue CLI project, update your `package.json`:
 }
 ```
 
-## 🟢 Using with [UmiJS](https://cli.vuejs.org/)
+## 🟢 Using with [UmiJS](https://umijs.org/)
 
 To build an UmiJS project, update your `package.json`:
 
