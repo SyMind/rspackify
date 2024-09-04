@@ -3,6 +3,7 @@ const path = require('path');
 const fs = require('fs');
 const debug = require('debug')('rspackify');
 const semver = require('semver');
+const chalk = require('chalk');
 const { findPackageSync } = require('fd-package-json');
 const { prepareRspackConfig } = require('./prepare-rspack-config');
 const { generateReport } = require('./generate-report');
@@ -16,7 +17,7 @@ const { printRspackVersion } = (new class {
     }
     this.printed = true;
     const rspack = require('@rspack/core');
-    console.log('Powered by Rspack, version:', rspack.rspackVersion)
+    console.log(chalk.green('Powered by Rspack, version:', rspack.rspackVersion))
     console.log()
   }
 })
@@ -133,6 +134,7 @@ mod._resolveFilename = (request, parent, isMain, options) => {
     case '@umijs/bundler-webpack/compiled/webpack':
     case '../compiled/webpack':
     case '../../compiled/webpack':
+      printRspackVersion();
       request = require.resolve('@rspack/core');
       break;
     case '@umijs/bundler-webpack/compiled/mini-css-extract-plugin':
